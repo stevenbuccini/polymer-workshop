@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Polymer Workshop -- By Steven Buccini</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Hello Polymer
+                    </a>
+                </li>
+                <li>
+                    <a href="#hello-polymer">Using your first Polymer element</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="hello-polymer" class="col-lg-12">
+                        <h1>Hello Polymer!</h1>
+                        <p>In this demo, you'll use your first Polymer element! But first, notice that we're working in a Bootstrap template. One of the neat things about Polymer is that since it's just plain ol' HTML®, it fits neatly into any existing stack or framework. Polymer and React? Sure, why not. Polymer and Bootstrap? No problem. The browser doesn't even know the difference, and neither will your users</p>
+                        <p>Don't you just hate it when you're filling out a text input, but when you start typing the placeholder disappears and you forget what format you're supposed to use? Yeah, me neither. But just work with me here.<p>
+                        <input type="text" name="email" placeholder="Enter your email!">
+                        <p>We can do better than that. Let's use Polymer's "paper-input" element, which has a neat floating label.</p>
+                        <ol>
+                            <li>First, install Polymer's paper-label web component:<br><code>bower install --save Polymer/paper-input</code></li>
+                            <li>Next, load the element using HTML imports. Add the following snippet of code to your page's <code>&lt;head&gt;</code>:<br><code>&lt;link href="bower_components/paper-input/paper-input.html" rel="import"&gt;</code></li>
+                            <li>Now, add the element to the page by adding it in the HTML below:<br><code>&lt;paper-input floatingLabel label="Floating Label"&gt;&lt;/paper-input&gt;</code></li>
+                            <li>Note: Chrome's Same Origin Policy sucks, so loading this file locally won't work. Instead, in your terminal navigate to the directory where this file lives and run the command <code>ython -m SimpleHTTPServer 8000</code>. Now navigate to <code>localhost:8000/</code></li>
+                        </ol>
+
+                        <!-- Insert your new element here! -->
+
+
+                        <p>Congratulations! You just experienced the magic of Polymer for the first time. Notice you didn't have to do any hard work. The text box has smooth animations built-in. Pretty cool! This isn't great for all scenarios (i.e. this doesn't work in forms) but you can use the <code>&lt;paper-input-decorator&gt;</code> to wrap the normal HTML <code>&lt;input&gt;</code> to use in forms and to add validation.</p>
+
+                        <h3>Additional challenge problems:</h3>
+                        <ul>
+                            <li>Use <code>&lt;paper-input-decorator&gt;</code> to create a textbox that raises an error when you type an invalid email</li>
+                            <li>After completing the above form, add it to a form where the submit button is a Polymer Paper component.</li>
+                            <li>Package this form up into its own atomic component.</li>
+                    </div>
+
+                    <div id=""
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
