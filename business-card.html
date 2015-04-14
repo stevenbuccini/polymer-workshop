@@ -1,0 +1,69 @@
+<!-- Load in our dependencies! The first line is necessary in each file; 
+     the second one isn't but we use this component here -->
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
+
+
+<!-- This is how you define a new Polymer element. The "name" field is what your
+     element will be called when you call it, so this element would be used like: <business-card>
+     Polymer names MUST contain a dash! -->
+<polymer-element name="business-card">
+  <!-- The template field tells allows you to define the structure of your element. -->
+  <template>
+    <!-- Here's where we define our shadow DOM. The :host pseudo-class matches the 
+         element that hosts the tree, "post-card" in this case. -->
+    <style>
+    :host {
+      display: block;
+      position: relative;
+      background-color: white;
+      margin: 20px;
+      width: 49%;
+      font-size: 1.2rem;
+      font-weight: 300;
+      border:5px solid black;
+    }
+    /* These class selectors only apply to the shadow DOM (everything between the <template> tags.) */
+    .card-header {
+      margin-bottom: 10px;
+    }
+    /* Polyfills for older browsers that don't provide native support for web components. */
+    polyfill-next-selector { content: '.card-header h2'; }
+
+    /* The ::content allows you to target insertion points instead of elements that are part of the template */
+    .card-header ::content h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+    polyfill-next-selector { content: '.card-header img'; }
+    .card-header ::content img {
+      width: 70px;
+      border-radius: 50%;
+      margin: 10px;
+    }
+
+    polyfill-next-selector { content: '.card-header a'; }
+    .email ::content a {
+      margin: 10px;
+      font-size:24px;
+    }
+    </style>
+
+    <!-- This HTML is actually how our content will be rendered in the page. -->
+    <!-- `layout horizontal center` are Polymer helpers to create a flexbox layout -->
+    <div class="card-header" layout horizontal center>
+      <!-- These selectors match certain types of content -->
+      <content select="img"></content>
+      <content select="h2"></content>
+    </div>
+
+    <!-- TODO: add in a content selector here to add a hyperlink for their email address -->
+
+    <content></content> <!-- This matches the rest of the content-->
+  </template>
+  <script>
+  //This registers our element so the browser will recognize it.
+  Polymer({});
+  </script>
+</polymer-element>

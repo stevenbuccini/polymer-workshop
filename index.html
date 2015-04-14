@@ -11,6 +11,11 @@
 
     <title>Polymer Workshop -- By Steven Buccini</title>
 
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link href="bower_components/paper-input/paper-input.html" rel="import">
+    <link href="business-card.html" rel="import">
+
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -42,7 +47,7 @@
                     <a href="#hello-polymer">Using your first Polymer element</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="#create">Create your first Polymer element</a>
                 </li>
                 <li>
                     <a href="#">Overview</a>
@@ -76,8 +81,8 @@
                         <ol>
                             <li>First, install Polymer's paper-label web component:<br><code>bower install --save Polymer/paper-input</code></li>
                             <li>Next, load the element using HTML imports. Add the following snippet of code to your page's <code>&lt;head&gt;</code>:<br><code>&lt;link href="bower_components/paper-input/paper-input.html" rel="import"&gt;</code></li>
-                            <li>Now, add the element to the page by adding it in the HTML below:<br><code>&lt;paper-input floatingLabel label="Floating Label"&gt;&lt;/paper-input&gt;</code></li>
-                            <li>Note: Chrome's Same Origin Policy sucks, so loading this file locally won't work. Instead, in your terminal navigate to the directory where this file lives and run the command <code>ython -m SimpleHTTPServer 8000</code>. Now navigate to <code>localhost:8000/</code></li>
+                            <li>Now, add the element to the page by adding it in the HTML below:<br><code>&lt;paper-input floatingLabel label="Enter your email!""&gt;&lt;/paper-input&gt;</code></li>
+                            <li>Note: Chrome's Same Origin Policy sucks, so loading this file locally won't work. Instead, in your terminal navigate to the directory where this file lives and run the command <code>python -m SimpleHTTPServer 8000</code>. Now navigate to <code>localhost:8000/</code></li>
                         </ol>
 
                         <!-- Insert your new element here! -->
@@ -92,7 +97,27 @@
                             <li>Package this form up into its own atomic component.</li>
                     </div>
 
-                    <div id=""
+                    <hr/>
+                    <div id="create">
+                    <h1>Creating your own Polymer element</h1>
+                    <p>Now, we're going to create our own Polymer element. Let's say our site has a gallery of business cards, one for each one of our team members. Hop on over to <code>business-card.html</code> to begin!</p>
+
+                    <!-- Uncomment me when ready! 
+
+                    <business-card>
+                        <img src="https://scontent-sjc.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10407588_10205485733488964_922178211701415560_n.jpg?oh=56cd973d9fdcaf078edcc2b71dbda1e8&oe=55ABC2C9" width="70" height="70">
+                        <h2>Steven Buccini</h2>
+
+                        <a href="mailto:sbuccini@berkeley.edu">Email me!</a>
+                    </business-card>
+
+                    -->
+
+
+
+                    <p>What happens if you remove the wildcard <code>&lt;conent&gt;</code> tag in the <code>&lt;business-card&gt;</code> template, then try to add a <code>&lt;h3&gt;</code> tag inside the <code>&lt;business-card&gt;</code>? It shouldn't appear! This is because there is no specific insertion point for this type of element, so the template doesn't know how to draw the <code>&lt;h3&gt;</code> tag.</p>
+                   
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,14 +131,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
 
 </body>
 

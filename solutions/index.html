@@ -8,17 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    
-    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-    <link href="bower_components/paper-input/paper-input.html" rel="import">
 
     <title>Polymer Workshop -- By Steven Buccini</title>
 
+    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link href="../bower_components/paper-input/paper-input.html" rel="import">
+    <link href="business-card.html" rel="import">
+
+
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +47,7 @@
                     <a href="#hello-polymer">Using your first Polymer element</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="#create">Create your first Polymer element</a>
                 </li>
                 <li>
                     <a href="#">Overview</a>
@@ -79,12 +81,13 @@
                         <ol>
                             <li>First, install Polymer's paper-label web component:<br><code>bower install --save Polymer/paper-input</code></li>
                             <li>Next, load the element using HTML imports. Add the following snippet of code to your page's <code>&lt;head&gt;</code>:<br><code>&lt;link href="bower_components/paper-input/paper-input.html" rel="import"&gt;</code></li>
-                            <li>Now, add the element to the page by adding it in the HTML below:<br><code>&lt;paper-input floatingLabel label="Floating Label"&gt;&lt;/paper-input&gt;</code></li>
+                            <li>Now, add the element to the page by adding it in the HTML below:<br><code>&lt;paper-input floatingLabel label="Enter your email!"&gt;&lt;/paper-input&gt;</code></li>
                             <li>Note: Chrome's Same Origin Policy sucks, so loading this file locally won't work. Instead, in your terminal navigate to the directory where this file lives and run the command <code>ython -m SimpleHTTPServer 8000</code>. Now navigate to <code>localhost:8000/</code></li>
                         </ol>
 
-                        <!-- Insert your new element here! -->
-                        <paper-input floatingLabel label="Email your email!"></paper-input>
+                        <paper-input floatingLabel label="Enter your email!"></paper-input>
+
+
                         <p>Congratulations! You just experienced the magic of Polymer for the first time. Notice you didn't have to do any hard work. The text box has smooth animations built-in. Pretty cool! This isn't great for all scenarios (i.e. this doesn't work in forms) but you can use the <code>&lt;paper-input-decorator&gt;</code> to wrap the normal HTML <code>&lt;input&gt;</code> to use in forms and to add validation.</p>
 
                         <h3>Additional challenge problems:</h3>
@@ -94,7 +97,31 @@
                             <li>Package this form up into its own atomic component.</li>
                     </div>
 
-                    <div id=""
+                    <hr/>
+                    <div id="create">
+                    <h1>Creating your own Polymer element</h1>
+                    <p>Now, we're going to create our own Polymer element. Let's say our site has a gallery of business cards, one for each one of our team members. Hop on over to <code>business-card.html</code> to begin!
+                    </div>
+
+                    <!-- Uncomment me when you're ready!    -->
+                    <business-card>
+                        <img src="https://scontent-sjc.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10407588_10205485733488964_922178211701415560_n.jpg?oh=56cd973d9fdcaf078edcc2b71dbda1e8&oe=55ABC2C9" width="70" height="70">
+                        <h2>Steven Buccini</h2>
+
+                        <a href="mailto:sbuccini@berkeley.edu">Email me!</a>
+                    </business-card>
+
+                    <business-card>
+                        <img src="https://scontent-sjc.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10407588_10205485733488964_922178211701415560_n.jpg?oh=56cd973d9fdcaf078edcc2b71dbda1e8&oe=55ABC2C9" width="70" height="70">
+                        <h2>Steven Buccini</h2>
+
+                        <a href="mailto:sbuccini@berkeley.edu">Email me!</a>
+                    </business-card>
+                 
+
+                 
+                    <p>What happens if you remove the wildcard <code>&lt;conent&gt;</code> tag in the <code>&lt;business-card&gt;</code> template, then try to add a <code>&lt;h3&gt;</code> tag inside the <code>&lt;business-card&gt;</code>? It shouldn't appear! This is because there is no specific insertion point for this type of element, so the template doesn't know how to draw the <code>&lt;h3&gt;</code> tag.</p>
+                    
                 </div>
             </div>
         </div>
@@ -104,18 +131,10 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+    <script src="../js/bootstrap.min.js"></script>
 
 </body>
 
